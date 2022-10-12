@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') })
 })
 
 app.listen(port, function () {
